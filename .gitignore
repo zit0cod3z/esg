@@ -1,0 +1,4 @@
+afridu_venv/
+esg_reg/__pycache__/
+esg_app/__pycache__/
+esg_app/migrations/__pycache__/
