@@ -16,8 +16,9 @@ def register(request):
 		email = request.POST.get("email")
 		organization = request.POST.get("organization")
 		industry = request.POST.get("industry")
+		position = request.POST.get("position")
 		event = request.POST.get("event")
-		instance = Registration(name=name, nationality=nationality, email=email, organization=organization, industry=industry, event=event)
+		instance = Registration(name=name, nationality=nationality, email=email, organization=organization, industry=industry, position=position, event=event)
 		instance.save()
 
 		# mail = EmailMessage(
@@ -45,6 +46,7 @@ def register(request):
 
 		message.attach_alternative(html_message, "text/html")
 		message.send()
+		return render(request, 'esg_app/thanks.html')
 
 
 	return render(request, 'esg_app/index.html')

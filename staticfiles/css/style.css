@@ -251,11 +251,11 @@ body {
   line-height: 1.8;
   color: #222;
   font-weight: 400;
-  background-color: skyblue;
-  /*background-position: center;
-  background-size:cover ;*/
-/*  height: 100vh;*/
-/*  width: 100%;*/
+  background: url("../images/esg.jpg") no-repeat;
+  background-position: center;
+  background-size:cover
+  height: 100vh;
+  width: 100%;
 }
 
 .container {
@@ -292,7 +292,7 @@ body {
 input, select {
   display: block;
   width: 100%;
-  border: 1px solid #ebebeb;
+  border: 1px solid skyblue;
   border-radius: 20px;
   padding: 11px 20px;
   box-sizing: border-box;
@@ -300,7 +300,7 @@ input, select {
   font-weight: 500;
   font-size: 13px; }
   input:focus, select:focus {
-    border: 1px solid seagreen; }
+    border: 1px solid skyblue; }
 
 label {
   font-size: 14px;
@@ -441,10 +441,10 @@ select {
     color: #fff; }
 
 #submit {
-  background: seagreen;
+  background: skyblue;
   color: #fff; }
   #submit:hover {
-    background-color: seagreen; }
+    background-color: skyblue; }
 
 @media screen and (max-width: 992px) {
   .container {

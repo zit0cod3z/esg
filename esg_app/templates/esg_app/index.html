@@ -16,11 +16,11 @@
 </head>
 <body style="background-image: url('../static/images/esg full.jpg') no-repeat;">
     {% block content %}
-    <div class="main">
+<div class="main">
         <div class="container">
             <div class="signup-content">
                 <div class="signup-img">
-                    <img style="border-radius: 20px;" src="{% static 'images/esg full.jpg' %}" alt="">
+                    <img style="border-radius: 5px;" src="{% static 'images/esg-full.jpg' %}" alt="">
                 </div>
                 <div class="signup-form">
                     <!-- "https://formsubmit.co/bcf8f75a0c78abf717605e494c6f6d84" -->
@@ -31,25 +31,50 @@
                             <div class="form-group">
                                 <!-- <input type="hidden" name="_subject" value="New Registration For AFRIDU 2024!!">
                                 <input type="hidden" name="_cc" value="ugo_ebeniro@yahoo.com"> -->
-                                <label for="name">Full Name :</label>
+                                <label for="name">Full Name</label>
                                 <input type="text" name="name" id="name" placeholder="Full Name" required autocomplete="on"/>
                             </div>
                             <div class="form-group">
-                                <label for="nationality">Nationality :</label>
+                                <label for="nationality">Nationality</label>
                                 <input type="text" name="nationality" placeholder="Nationality" required autocomplete="on"/>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="address">Email Address :</label>
+                            <label for="address">Email Address</label>
                             <input type="email" name="email" placeholder="Valid Email Address" id="address" required autocomplete="on"/>
                         </div>
                         <div class="form-group">
-                                <label for="name">Organization :</label>
+                                <label for="name">Organization</label>
                                 <input type="text" name="organization" placeholder="Your Organization" id="organization" required autocomplete="on"/>
                         </div>
                         <div class="form-group">
-                                <label for="name">Industry :</label>
-                                <input type="text" name="industry" placeholder="Position in Organization" id="industry" required autocomplete="on"/>
+                                <label for="name">Designation</label>
+                                <input type="text" name="position" placeholder="Designation in Organization" id="position" required autocomplete="on"/>
+                        </div>
+                        <div class="form-radio">
+                            <label for="event">Industry</label>
+                            <select name="industry" id="industry">
+                                <option value="Process Industries">Process Industries</option>
+                                <option value="Consumer Non Durable">Consumer Non Durable</option>
+                                <option value="Fashion">Fashion</option>
+                                <option value="Aerospace">Aerospace</option>
+                                <option value="Automotive">Automotive</option>
+                                <option value="Food Services">Food Services</option>
+                                <option value="Healthcare">Healthcare</option>
+                                <option value="Insurance">Insurance</option>
+                                <option value="Oil and Gas">Oil and Gas</option>
+                                <option value="Construction">Construction</option>
+                                <option value="Travel and Tourism">Travel and Tourism</option>
+                                <option value="Media and Telecoms">Media and Telecoms</option>
+                                <option value="Sport">Sport</option>
+                                <option value="Retail and Apparel">Retail and Apparel</option>
+                                <option value="Defense and Security">Defense and Security</option>
+                                <option value="Power">Power</option>
+                                <option value="Financial Services">Financial Services</option>
+                                <option value="Mining">Mining</option>
+                                <option value="Packaging">Packaging</option>
+                                <option value="Others">Others</option>
+                            </select>
                         </div>
                         <div class="form-radio">
                             <label for="event">Will you be attending Virtually or Physically?</label>
@@ -61,24 +86,6 @@
                         <div class="form-submit">
                             <!-- <input type="submit" value="Clear All" class="submit" name="reset" id="reset" /> -->
                             <input type="submit" value="Register" class="submit" id="submit" />
-                            <!-- <input style="background-image: url('afridu banner.jpg');" type="hidden" name="_autoresponse" value="Thank you for registering to attend the upcoming AFRIDU HOMECOMING Event in Abuja, Nigeria. Scheduled to take place from 17th to 27th October 2024.
-
-                            Please note: Your visitor pass will be emailed to you the week before the event. Please ensure you bring it to registration on arrival with a form of identification.
-
-                            AFRIDU Office Address: 13B, Mambila Street off Aso Drive, Abuja.
-
-                            Please note that only VIP delegate pass holders will be permitted to attend all events premises.
-
-                            We look forward to welcoming you to the HOMECOMING EVENT October 16th to 27th 2024 INTERNATIONAL GATHERING IN HONOUR OF AFRICAN DESCENDANTS IN DIASPORA
-                            .............................................................
-                            Yours In Nation Building Arch. Prof, Chidiebere Analechi Ogbu 
-                            AFRIDU Presidential
-                            ................................................................
-
-                            For Delegate, Sponsorship and Exhibition Opportunities please contact: Diplomatic Administrator Dr.Breakforth Onwubuya on +234 803 349 4643 or email AFRIDU.ORG
-
-                            Get the latest updates AFRIDU.ORG..................
-                            "> -->
                         </div>
                     </form>
                 </div>
