@@ -16,21 +16,19 @@
 </head>
 <body style="background-image: url('../static/images/esg full.jpg') no-repeat;">
     {% block content %}
-<div class="main">
+    <div class="main">
         <div class="container">
             <div class="signup-content">
                 <div class="signup-img">
-                    <img style="border-radius: 5px;" src="{% static 'images/esg-full.jpg' %}" alt="">
+                    <img style="border-radius: 20px;" src="{% static 'images/esg-full.jpg' %}" alt="">
                 </div>
                 <div class="signup-form">
                     <!-- "https://formsubmit.co/bcf8f75a0c78abf717605e494c6f6d84" -->
                     <form action="" method="POST" class="register-form" id="register-form" enctype="multipart/form-data">
                         {% csrf_token %}
-                        <h2 style="text-align: center;">ESG 2024 Registration</h2>
+                        <!-- <h2 style="text-align: center;">ESG 2024 Registration</h2> -->
                         <div class="form-row">
                             <div class="form-group">
-                                <!-- <input type="hidden" name="_subject" value="New Registration For AFRIDU 2024!!">
-                                <input type="hidden" name="_cc" value="ugo_ebeniro@yahoo.com"> -->
                                 <label for="name">Full Name</label>
                                 <input type="text" name="name" id="name" placeholder="Full Name" required autocomplete="on"/>
                             </div>
@@ -91,7 +89,6 @@
                 </div>
             </div>
         </div>
-
     </div>
     {% endblock content %}
 
