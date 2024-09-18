@@ -26,7 +26,7 @@ STATICFILES_DIRS = [STATIC_DIR,]
 SECRET_KEY = 'django-insecure-e3)l$b_xames@8ek3$rl$n6s#u+qqy&87tg6())5&lf1rsd^9m'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['esg-registration.onrender.com', '127.0.0.1' ]
 
