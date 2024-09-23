@@ -46,7 +46,7 @@ def register(request):
 		if settings.DEBUG:
 			qr_img_url = f"http://{current_site.domain}{settings.MEDIA_URL}qr_codes/{instance.id}.png"
 		else:
-		qr_img_url = f"https://esg-registration.onrender.com{settings.MEDIA_URL}qr_codes/{instance.id}.png"
+			qr_img_url = f"https://esg-registration.onrender.com{settings.MEDIA_URL}qr_codes/{instance.id}.png"
 		instance.save()
 
 		# mail = EmailMessage(
