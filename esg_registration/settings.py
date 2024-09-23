@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-e3)l$b_xames@8ek3$rl$n6s#u+qqy&87tg6())5&lf1rsd^9m
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['esg-registration.onrender.com', '127.0.0.1' ]
+ALLOWED_HOSTS = ['esg-registration.onrender.com', '127.0.0.1',]
 
 
 # Application definition
@@ -128,13 +128,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-MEDIA_URL = 'images/'
+# MEDIA_URL = 'images/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 STATICFILES_DIR = [
     os.path.join(BASE_DIR, 'static')
 ]
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
@@ -153,9 +155,9 @@ CKEDITOR_CONFIGS = {
 }
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp-relay.brevo.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-# EMAIL_USE_SSL = True
-EMAIL_HOST_USER = 'sales@wristbands.ng'
-EMAIL_HOST_PASSWORD = 'x9bXfnB7YMkZ5SC8'
+EMAIL_HOST = 'smtp.hostinger.com'
+EMAIL_PORT = 465
+# EMAIL_USE_TLS = True
+EMAIL_USE_SSL = True
+EMAIL_HOST_USER = 'info@esgforumafrica.com'
+EMAIL_HOST_PASSWORD = '@Esgforum2023@'

@@ -1,4 +1,8 @@
 from django.shortcuts import render, redirect
+import qrcode
+import base64
+import os
+from PIL import Image
 from django.http import HttpResponse
 from esg_app.models import Registration
 from django.views.decorators.csrf import csrf_protect
@@ -7,6 +11,9 @@ from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from django.conf import settings
 from .models import *
+from io import BytesIO
+from django.contrib.sites.shortcuts import get_current_site
+# from PIL import Image
 
 # Create your views here.
 def register(request):
@@ -19,6 +26,27 @@ def register(request):
 		position = request.POST.get("position")
 		event = request.POST.get("event")
 		instance = Registration(name=name, nationality=nationality, email=email, organization=organization, industry=industry, position=position, event=event)
+		# instance.save()
+		# qr_content = f"Name: {name}, Nationality: {nationality}, Organization: {organization}, Designation: {position}, Industry: {industry}"
+		# qr_img = qrcode.make(qr_content)
+		# qr_img = qr_img.resize((200, 200)) 
+		# buffered = BytesIO()
+		# qr_img.save(buffered, format="PNG")
+		# qr_img_str = base64.b64encode(buffered.getvalue()).decode('utf-8')
+
+		qr_content = f"Name: {name}, Nationality: {nationality}, Organization: {organization}, Designation: {position}, Industry: {industry}"
+		qr_img = qrcode.make(qr_content)
+		qr_codes_dir = os.path.join(settings.MEDIA_ROOT, 'qr_codes')
+		os.makedirs(qr_codes_dir, exist_ok=True)
+		qr_img_path = os.path.join(settings.MEDIA_ROOT, 'qr_codes', f'{instance.id}.png')
+		qr_img.save(qr_img_path)
+		qr_img_url = f"{settings.MEDIA_URL}qr_codes/{instance.id}.png"
+		# filename = f"qr_code.png"
+		current_site = get_current_site(request)
+		if settings.DEBUG:
+			qr_img_url = f"http://{current_site.domain}{settings.MEDIA_URL}{filename}qr_codes/{instance.id}.png"
+		else:
+			qr_img_url = f"https://esg-registration.onrender.com{settings.MEDIA_URL}qr_codes/{instance.id}.png"
 		instance.save()
 
 		# mail = EmailMessage(
@@ -34,7 +62,7 @@ def register(request):
 		welcome_message = name
 
 
-		html_message = render_to_string("esg_app/email.html")
+		html_message = render_to_string("esg_app/email.html", {"instance": instance, "qr_img_url": qr_img_url})
 		plain_message = strip_tags(html_message)
 
 		message = EmailMultiAlternatives(

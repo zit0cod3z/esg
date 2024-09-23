@@ -20,4 +20,4 @@ class Registration(models.Model):
 		ordering = ('-submitted_at',)
 
 	def __str__(self):
-		return f'Registration by {self.name} from {self.nationality} at {self.submitted_at} attending {self.event}'
+		return f'Registration by {self.name} from a {self.nationality} at {self.submitted_at} attending {self.event}'

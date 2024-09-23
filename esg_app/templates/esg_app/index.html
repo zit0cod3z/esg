@@ -22,7 +22,7 @@
                 <div class="signup-img">
                     <img style="border-radius: 20px;" src="{% static 'images/esg-full.jpg' %}" alt="">
                 </div>
-                <div class="signup-form">
+                <div class="signup-form" style="border-radius: 20px;">
                     <!-- "https://formsubmit.co/bcf8f75a0c78abf717605e494c6f6d84" -->
                     <form action="" method="POST" class="register-form" id="register-form" enctype="multipart/form-data">
                         {% csrf_token %}
@@ -60,6 +60,7 @@
                                 <option value="Food Services">Food Services</option>
                                 <option value="Healthcare">Healthcare</option>
                                 <option value="Insurance">Insurance</option>
+                                <option value="Tech">Tech</option>
                                 <option value="Oil and Gas">Oil and Gas</option>
                                 <option value="Construction">Construction</option>
                                 <option value="Travel and Tourism">Travel and Tourism</option>
