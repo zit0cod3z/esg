@@ -43,9 +43,9 @@ def register(request):
 		qr_img_url = f"{settings.MEDIA_URL}qr_codes/{instance.id}.png"
 		# filename = f"qr_code.png"
 		current_site = get_current_site(request)
-		# if settings.DEBUG:
-		# 	qr_img_url = f"http://{current_site.domain}{settings.MEDIA_URL}qr_codes/{instance.id}.png"
-		# else:
+		if settings.DEBUG:
+			qr_img_url = f"http://{current_site.domain}{settings.MEDIA_URL}qr_codes/{instance.id}.png"
+		else:
 		qr_img_url = f"https://esg-registration.onrender.com{settings.MEDIA_URL}qr_codes/{instance.id}.png"
 		instance.save()
 
